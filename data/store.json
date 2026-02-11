@@ -1,1 +1,1 @@
-{}
+{"user:101:name": "Alice Johnson", "user:101:role": "Admin", "user:102:name": "Bob Smith", "user:102:role": "Developer", "session:xyz789": "active", "config:mode": "production", "config:retries": "3", "feature:dark_mode": "true", "cache:home_page": "<html>...</html>", "cache:profile": "{json...}"}

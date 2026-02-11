@@ -21,3 +21,11 @@ class PyKVStore:
             self.persistence.save(self.data)
             return True
         return False
+
+    def get_all(self):
+        return self.data
+
+    def clear(self):
+        self.data = {}
+        self.persistence.save(self.data)
+        return True

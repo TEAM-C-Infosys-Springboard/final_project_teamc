@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from engine.store import PyKVStore
 
 app = FastAPI(title="PyKV - In-Memory Key Value Store")
@@ -25,5 +25,16 @@ def get_value(key: str):
 def delete_value(key: str):
     success = kv_store.delete(key)
     if not success:
-        return {"error": "Key not found"}
+        raise HTTPException(status_code=404, detail="Key not found")
     return {"message": "Key deleted successfully"}
+
+
+@app.get("/all")
+def get_all_values():
+    return kv_store.get_all()
+
+
+@app.delete("/clear")
+def clear_data():
+    kv_store.clear()
+    return {"message": "Store cleared successfully"}
