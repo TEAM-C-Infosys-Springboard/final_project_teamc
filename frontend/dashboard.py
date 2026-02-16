@@ -14,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# --- 🎨 DYNAMIC THEME ENGINE ---
+# ---  DYNAMIC THEME ENGINE ---
 if "theme" not in st.session_state:
     st.session_state.theme = "dark"
 
